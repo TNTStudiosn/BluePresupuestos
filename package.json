@@ -2,10 +2,10 @@
   "name": "blue-presupuestos",
   "version": "1.0.0",
   "description": "Aplicación de presupuestos con IA en Electron",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron ."
-  },
+  "main": "src/main.js",
+"scripts": {
+  "start": "electron src/main.js"
+},
   "devDependencies": {
     "electron": "^28.0.0"
   },
