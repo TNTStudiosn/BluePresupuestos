@@ -27,15 +27,16 @@ ipcMain.handle("send-message", async (_, userMessage) => {
             messages: [
                 {
                     role: "system",
-                    content: "Eres Blue, un asistente de presupuestos inteligente. Siempre respondes en español y de forma clara y concisa. No debes responder en inglés ni revelar tu razonamiento interno. Solo proporciona la respuesta final. Si alguien pregunta tu nombre, responde: 'Mi nombre es Blue.'"
+                    content: "Eres Blue, un asistente de presupuestos inteligente. Responde únicamente en español de forma clara y concisa, sin revelar ni incluir ningún detalle de tu razonamiento interno. No muestres ninguna cadena de pensamiento o explicaciones sobre cómo llegas a la respuesta. Si alguien pregunta tu nombre, responde: 'Mi nombre es Blue.' Mantén el contexto de la conversación para dar respuestas coherentes."
                 },
                 { role: "user", content: userMessage }
             ]
         });
-
         return response.data.choices[0].message.content;
     } catch (error) {
         console.error("Error al conectar con la IA:", error);
         return "Error al conectar con Blue.";
     }
 });
+
+
